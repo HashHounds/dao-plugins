@@ -8,11 +8,9 @@ dotenv.config();
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
   networks: {
-    goerli: {
-      url: process.env.GOERLI_RPC_URL,
-      accounts: {
-        mnemonic: process.env.MNEMONIC as string,
-      },
+    mumbai: {
+      url: process.env.MUMBAI_RPC_URL,
+      accounts: [String(process.env.PK)],
     },
     frame: {
       httpHeaders: { origin: "hardhat" },
